@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Calculadora</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/5394db6f03.js" crossorigin="anonymous"></script>
+</head>
+<script>
+    function guardar(caractere) {
+        window.document.forms["calc"].num.value += caractere
+    }
+    function MostrarResultado() {
+        window.document.forms["calc"].num.value = eval(window.document.forms["calc"].num.value)
+    }
+    function Limpar() {
+        window.document.forms["calc"].num.value = ""
+    }
+</script>
+
+<style>
+    .btn {
+        margin: 3px;
+        width: 4rem;
+    }
+
+    .fundo {
+        width: 400px;
+        padding: 10px;
+        border-radius: 10%;
+    }
+    .fab{
+        float: left;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="container d-flex justify-content-center">
+        <form>
+
+        </form>
+        <div class="fundo bg-dark d-flex justify-content-center ">
+            <form class="align-items-center" name="calc">
+                    <i class="fab fa-apple"></i><input class="form-control" name="num" type="text">
+                <div class="row justify-content-center">
+                    <input class="btn btn-secondary" name="sete" type="button" value="7" onclick="guardar('7')">
+                    <input class="btn btn-secondary" name="oito" type="button" value="8" onclick="guardar('8')">
+                    <input class="btn btn-secondary" name="nove" type="button" value="9" onclick="guardar('9')">
+                    <input class="btn btn-secondary" name="mult" type="button" value="*" onclick="guardar('*')">
+                </div>
+                <div class="row justify-content-center">
+                    <input class="btn btn-secondary" name="quatro" type="button" value="4" onclick="guardar('4')">
+                    <input class="btn btn-secondary" name="cinco" type="button" value="5" onclick="guardar('5')">
+                    <input class="btn btn-secondary" name="seis" type="button" value="6" onclick="guardar('6')">
+                    <input class="btn btn-secondary" name="div" type="button" value="/" onclick="guardar('/')">
+                </div>
+                <div class="row justify-content-center">
+                    <input class="btn btn-secondary" name="um" type="button" value="1" onclick="guardar('1')">
+                    <input class="btn btn-secondary" name="dois" type="button" value="2" onclick="guardar('2')">
+                    <input class="btn btn-secondary" name="tres" type="button" value="3" onclick="guardar('3')">
+                    <input class="btn btn-secondary" name="soma" type="button" value="+" onclick="guardar('+')">
+                </div>
+                <div class="row justify-content-center">
+                    <input class="btn btn-danger" name="limpar" type="button" value="c" onclick="Limpar()">
+                    <input class="btn btn-secondary" name="zero" type="button" value="0" onclick="guardar('0')">
+                    <input class="btn btn-primary" name="igual" type="button" value="=" onclick="MostrarResultado()">
+                    <input class="btn btn-secondary" name="sub" type="button" value="-" onclick="guardar('-')">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

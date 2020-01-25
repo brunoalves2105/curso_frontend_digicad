@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>tabuada</title>
+        <meta charset="utf-8">
+        <script>
+            function Calcular(){
+            var num = document.getElementById("n1").value;
+            var num1 = parseInt(num);
+            var res = 0;
+            var text = "";
+            for( c = 0; c <= 10; c++){
+              res = num1 * c + "<br>";
+              document.getElementById("res").innerHTML += c + "x" + num + "=" + res;
+            }} 
+            
+            var n = 2.5;
+            var saida = Math.sqrt(49);
+            console.log(saida);
+        </script>
+    </head>
+    <body>
+        <label for="n1">digite um numero:</label>
+        <input type="number" id="n1" name="n1">
+        <button onclick="Calcular()">calcular</button>
+        <p id="res">resultado:<br></p>
+        
+    </body>
+</html>
